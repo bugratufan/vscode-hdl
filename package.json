@@ -1,0 +1,55 @@
+{
+  "name": "vscode-hdl",
+  "displayName": "vscode-hdl",
+  "description": "Visual Studio Code extension for HDL development",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:vhdl"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+          "command": "vscode-hdl.analyzeModule",
+          "title": "Analyze Module",
+          "category": "Analyze"
+      },
+      {
+        "command": "vscode-hdl.pasteInstance",
+        "title": "Paste Instance",
+        "category": "Text"
+      },
+      {
+        "command": "vscode-hdl.pasteSignals",
+        "title": "Paste Signals",
+        "category": "Text"
+      },
+      {
+        "command": "vscode-hdl.pasteConstraints",
+        "title": "Paste Constraints",
+        "category": "Text"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.78.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4",
+    "@vscode/test-electron": "^2.3.0"
+  }
+}
